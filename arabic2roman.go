@@ -25,7 +25,14 @@ func init() {
 	a2rdata[90] = "XC"
 
 	a2rdata[100] = "C"
-
+	a2rdata[200] = "CC"
+	a2rdata[300] = "CCC"
+	a2rdata[400] = "CD"
+	a2rdata[500] = "D"
+	a2rdata[600] = "DC"
+	a2rdata[700] = "DCC"
+	a2rdata[800] = "DCCC"
+	a2rdata[900] = "CM"
 }
 
 func a2r(x int) string {
