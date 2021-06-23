@@ -13,13 +13,21 @@ func init() {
 	a2rdata[7] = "VII"
 	a2rdata[8] = "VIII"
 	a2rdata[9] = "IX"
+
+	a2rdata[10] = "X"
+	a2rdata[20] = "XX"
+	a2rdata[30] = "XXX"
+	a2rdata[40] = "XL"
+	a2rdata[50] = "L"
+	a2rdata[60] = "LX"
+	a2rdata[70] = "LXX"
+	a2rdata[80] = "LXXX"
+	a2rdata[90] = "XC"
 }
 
 func a2r(x int) string {
-	if x == 10 {
-		return "X"
-	} else if x == 20 {
-		return "XX"
+	if x >= 10 {
+		return a2rdata[x]
 	}
 	return a2rdata[x]
 }
