@@ -17,3 +17,11 @@ func TestA2R02(t *testing.T) {
 		t.Errorf("Expected %v, Result %v", expected, result)
 	}
 }
+
+func TestA2R03(t *testing.T) {
+	expected := "III"
+	result := a2r(3)
+	if expected != result {
+		t.Errorf("Expected %v, Result %v", expected, result)
+	}
+}
