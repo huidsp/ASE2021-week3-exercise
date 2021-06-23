@@ -23,10 +23,16 @@ func init() {
 	a2rdata[70] = "LXX"
 	a2rdata[80] = "LXXX"
 	a2rdata[90] = "XC"
+
+	a2rdata[100] = "C"
+
 }
 
 func a2r(x int) string {
 	str := ""
+	if x >= 100 {
+		return a2rdata[x]
+	}
 	if x >= 10 {
 		ten := (x / 10) * 10
 		x -= ten
