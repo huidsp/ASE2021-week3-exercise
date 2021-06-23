@@ -35,13 +35,17 @@ func init() {
 	a2rdata[900] = "CM"
 
 	a2rdata[1000] = "M"
-
+	a2rdata[2000] = "MM"
+	a2rdata[3000] = "MMM"
+	a2rdata[4000] = "MMMM"
 }
 
 func a2r(x int) string {
 	str := ""
 	if x >= 1000 {
-		return a2rdata[x]
+		thousand := (x / 1000) * 1000
+		x -= thousand
+		str += a2rdata[thousand]
 	}
 	if x >= 100 {
 		hundred := (x / 100) * 100
