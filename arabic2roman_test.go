@@ -54,3 +54,14 @@ func TestA2R06(t *testing.T) {
 	}
 
 }
+
+func TestA2R07(t *testing.T) {
+	expected := []string{"XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"}
+	input := []int{30, 40, 50, 60, 70, 80, 90}
+	for i, x := range expected {
+		result := a2r(input[i])
+		if x != result {
+			t.Errorf("Expected %v, Result %v", expected[i], result)
+		}
+	}
+}
