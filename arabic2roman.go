@@ -31,7 +31,9 @@ func init() {
 func a2r(x int) string {
 	str := ""
 	if x >= 100 {
-		return a2rdata[x]
+		hundred := (x / 100) * 100
+		x -= hundred
+		str += a2rdata[hundred]
 	}
 	if x >= 10 {
 		ten := (x / 10) * 10
