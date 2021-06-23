@@ -1,5 +1,9 @@
 package main
 
 func a2r(x int) string {
-	return "I"
+	if x == 1 {
+		return "I"
+	} else {
+		return "II"
+	}
 }
