@@ -42,6 +42,9 @@ func init() {
 
 func a2r(x int) string {
 	str := ""
+	if x >= 5000 {
+		return ""
+	}
 	if x >= 1000 {
 		thousand := (x / 1000) * 1000
 		x -= thousand
