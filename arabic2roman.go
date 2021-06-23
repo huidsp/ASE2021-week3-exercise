@@ -16,5 +16,8 @@ func init() {
 }
 
 func a2r(x int) string {
+	if x == 10 {
+		return "X"
+	}
 	return a2rdata[x]
 }
