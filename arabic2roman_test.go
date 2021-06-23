@@ -36,3 +36,56 @@ func TestA2R04(t *testing.T) {
 		}
 	}
 }
+
+func TestA2R05(t *testing.T) {
+	expected := "X"
+	result := a2r(10)
+	if expected != result {
+		t.Errorf("Expected %v, Result %v", expected, result)
+	}
+
+}
+
+func TestA2R06(t *testing.T) {
+	expected := "XX"
+	result := a2r(20)
+	if expected != result {
+		t.Errorf("Expected %v, Result %v", expected, result)
+	}
+
+}
+
+func TestA2R07(t *testing.T) {
+	expected := []string{"XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"}
+	input := []int{30, 40, 50, 60, 70, 80, 90}
+	for i, x := range expected {
+		result := a2r(input[i])
+		if x != result {
+			t.Errorf("Expected %v, Result %v", expected[i], result)
+		}
+	}
+}
+
+func TestA2R08(t *testing.T) {
+	expected := "XI"
+	result := a2r(11)
+	if expected != result {
+		t.Errorf("Expected %v, Result %v", expected, result)
+	}
+}
+
+func TestA2R09(t *testing.T) {
+	expected := "XLIV"
+	result := a2r(44)
+	if expected != result {
+		t.Errorf("Expected %v, Result %v", expected, result)
+	}
+}
+
+func TestA2R11(t *testing.T) {
+	expected := "XCIX"
+	result := a2r(99)
+	if expected != result {
+		t.Errorf("Expected %v, Result %v", expected, result)
+	}
+}
