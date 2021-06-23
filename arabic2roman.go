@@ -26,11 +26,12 @@ func init() {
 }
 
 func a2r(x int) string {
+	str := ""
 	if x >= 10 {
-		if x == 11 {
-			return a2rdata[10] + a2rdata[1]
-		}
-		return a2rdata[x]
+		ten := (x / 10) * 10
+		x -= ten
+		str += a2rdata[ten]
 	}
-	return a2rdata[x]
+	str += a2rdata[x]
+	return str
 }
