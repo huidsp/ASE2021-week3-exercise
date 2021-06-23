@@ -18,6 +18,8 @@ func init() {
 func a2r(x int) string {
 	if x == 10 {
 		return "X"
+	} else if x == 20 {
+		return "XX"
 	}
 	return a2rdata[x]
 }
