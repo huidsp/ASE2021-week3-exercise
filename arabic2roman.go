@@ -27,6 +27,9 @@ func init() {
 
 func a2r(x int) string {
 	if x >= 10 {
+		if x == 11 {
+			return a2rdata[10] + a2rdata[1]
+		}
 		return a2rdata[x]
 	}
 	return a2rdata[x]
