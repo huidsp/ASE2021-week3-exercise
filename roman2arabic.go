@@ -1,7 +1,8 @@
 package main
 
 var r2adata map[string]int
-var rlabel []string
+var rlabel10 []string
+var rlabel1 []string
 
 func init() {
 	r2adata = make(map[string]int)
@@ -25,23 +26,38 @@ func init() {
 	r2adata["LXXX"] = 80
 	r2adata["XC"] = 90
 
-	rlabel = []string{
-		"LXXX", "VIII",
-		"XXX", "LXX", "III", "VII",
-		"XX", "XL", "LX", "XC", "II", "IV", "VI", "IX",
-		"X", "L", "I", "V"}
+	rlabel10 = []string{
+		"LXXX",
+		"XXX", "LXX",
+		"XX", "XL", "LX", "XC",
+		"X", "L"}
+
+	rlabel1 = []string{
+		"VIII",
+		"III", "VII",
+		"II", "IV", "VI", "IX",
+		"I", "V"}
 }
 
 func r2a(x string) int {
 	y := 0
-	for len(x) > 0 {
-		for _, u := range rlabel {
-			if len(x) >= len(u) && x[0:len(u)] == u {
-				y += r2adata[u]
-				x = x[len(u):len(x)]
-				break
-			}
+	for _, u := range rlabel10 {
+		if len(x) >= len(u) && x[0:len(u)] == u {
+			y += r2adata[u]
+			x = x[len(u):len(x)]
+			break
 		}
 	}
-	return y
+	for _, u := range rlabel1 {
+		if len(x) >= len(u) && x[0:len(u)] == u {
+			y += r2adata[u]
+			x = x[len(u):len(x)]
+			break
+		}
+	}
+	if len(x) != 0 {
+		return 0
+	} else {
+		return y
+	}
 }
