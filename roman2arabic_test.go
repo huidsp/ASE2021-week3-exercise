@@ -27,3 +27,21 @@ func TestR2A03(t *testing.T) {
 		}
 	}
 }
+
+func TestR2A04(t *testing.T) {
+	expected := 10
+	result := r2a("X")
+	if expected != result {
+		t.Errorf("Expected %v, Result %v", expected, result)
+	}
+}
+
+func TestR2A05(t *testing.T) {
+	expected := []int{20, 30, 40, 50, 60, 70, 80, 90}
+	input := []string{"XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"}
+	for i, x := range input {
+		if expected[i] != r2a(x) {
+			t.Errorf("Expected %v, Result %v", expected[i], x)
+		}
+	}
+}

@@ -13,6 +13,16 @@ func init() {
 	r2adata["VII"] = 7
 	r2adata["VIII"] = 8
 	r2adata["IX"] = 9
+
+	r2adata["X"] = 10
+	r2adata["XX"] = 20
+	r2adata["XXX"] = 30
+	r2adata["XL"] = 40
+	r2adata["L"] = 50
+	r2adata["LX"] = 60
+	r2adata["LXX"] = 70
+	r2adata["LXXX"] = 80
+	r2adata["XC"] = 90
 }
 
 func r2a(x string) int {
