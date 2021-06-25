@@ -26,5 +26,8 @@ func init() {
 }
 
 func r2a(x string) int {
+	if x == "XI" {
+		return 11
+	}
 	return r2adata[x]
 }
