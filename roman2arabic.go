@@ -1,9 +1,13 @@
 package main
 
+var r2adata map[string]int
+
+func init() {
+	r2adata = make(map[string]int)
+	r2adata["I"] = 1
+	r2adata["II"] = 2
+}
+
 func r2a(x string) int {
-	if x == "I" {
-		return 1
-	} else {
-		return 2
-	}
+	return r2adata[x]
 }
