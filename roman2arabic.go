@@ -1,8 +1,9 @@
 package main
 
 var r2adata map[string]int
-var rlabel10 []string
 var rlabel1 []string
+var rlabel10 []string
+var rlabel100 []string
 
 func init() {
 	r2adata = make(map[string]int)
@@ -26,21 +27,30 @@ func init() {
 	r2adata["LXXX"] = 80
 	r2adata["XC"] = 90
 
-	rlabel10 = []string{
-		"LXXX",
-		"XXX", "LXX",
-		"XX", "XL", "LX", "XC",
-		"X", "L"}
+	r2adata["C"] = 100
+	r2adata["CC"] = 200
+	r2adata["CCC"] = 300
+	r2adata["CD"] = 400
+	r2adata["D"] = 500
+	r2adata["DC"] = 600
+	r2adata["DCC"] = 700
+	r2adata["DCCC"] = 800
+	r2adata["CM"] = 900
 
-	rlabel1 = []string{
-		"VIII",
-		"III", "VII",
-		"II", "IV", "VI", "IX",
-		"I", "V"}
+	rlabel1 = []string{"VIII", "III", "VII", "II", "IV", "VI", "IX", "I", "V"}
+	rlabel10 = []string{"LXXX", "XXX", "LXX", "XX", "XL", "LX", "XC", "X", "L"}
+	rlabel100 = []string{"DCCC", "CCC", "DCC", "CC", "CD", "DC", "CM", "C", "D"}
 }
 
 func r2a(x string) int {
 	y := 0
+	for _, u := range rlabel100 {
+		if len(x) >= len(u) && x[0:len(u)] == u {
+			y += r2adata[u]
+			x = x[len(u):len(x)]
+			break
+		}
+	}
 	for _, u := range rlabel10 {
 		if len(x) >= len(u) && x[0:len(u)] == u {
 			y += r2adata[u]
