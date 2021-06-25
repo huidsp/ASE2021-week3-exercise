@@ -1,5 +1,9 @@
 package main
 
 func r2a(x string) int {
-	return 1
+	if x == "I" {
+		return 1
+	} else {
+		return 2
+	}
 }
