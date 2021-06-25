@@ -27,7 +27,12 @@ func init() {
 
 func r2a(x string) int {
 	if x == "XI" {
-		return 11
+		s := x[0:1]
+		x := x[1:2]
+		y := r2adata[s]
+		y += r2adata[x]
+		return y
+	} else {
+		return r2adata[x]
 	}
-	return r2adata[x]
 }
