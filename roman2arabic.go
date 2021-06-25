@@ -32,6 +32,12 @@ func r2a(x string) int {
 		y := r2adata[s]
 		y += r2adata[x]
 		return y
+	} else if x == "XXI" {
+		s := x[0:2]
+		x := x[2:3]
+		y := r2adata[s]
+		y += r2adata[x]
+		return y
 	} else {
 		return r2adata[x]
 	}

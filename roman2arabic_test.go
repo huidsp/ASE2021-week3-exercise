@@ -53,3 +53,11 @@ func TestR2A06(t *testing.T) {
 		t.Errorf("Expected %v, Result %v", expected, result)
 	}
 }
+
+func TestR2A07(t *testing.T) {
+	expected := 21
+	result := r2a("XXI")
+	if expected != result {
+		t.Errorf("Expected %v, Result %v", expected, result)
+	}
+}
